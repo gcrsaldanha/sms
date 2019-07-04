@@ -1,7 +1,5 @@
 from django.db import models
 
-from core.models import Amount
-
 
 class Manufacturer(models.Model):
     name = models.CharField()
@@ -21,6 +19,6 @@ class Catalog(models.Model):
         ]
 
     item = models.ForeignKey(Item, on_delete=models.PROTECT)
-    stock_units = models.ForeignKey(Amount, on_delete=models.PROTECT)
-    manufacturer = models.ForeignKey(Manufacturer, null= True, on_delete=models.PROTECT)
+    manufacturer = models.ForeignKey(Manufacturer, null=True, on_delete=models.PROTECT)
     catalog_number = models.CharField(blank=True)
+    stock_units = models.PositiveIntegerField()
