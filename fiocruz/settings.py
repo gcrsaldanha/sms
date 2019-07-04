@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'catalog.apps.CatalogConfig',
     'order.apps.OrderConfig',
     'stock.apps.StockConfig',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
