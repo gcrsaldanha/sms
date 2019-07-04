@@ -29,19 +29,31 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
-INSTALLED_APPS = [
-    'main.apps.MainConfig',
-    'catalog.apps.CatalogConfig',
-    'order.apps.OrderConfig',
-    'stock.apps.StockConfig',
-    'rest_framework',
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+VENDOR_APPS = [
+    'rest_framework',
+]
+
+COMMON_APPS = [
+    'main.apps.MainConfig',
+    'catalog.apps.CatalogConfig',
+    'order.apps.OrderConfig',
+    'stock.apps.StockConfig',
+    'frontend.apps.FrontendConfig',
+]
+
+INSTALLED_APPS = [
+    *COMMON_APPS,
+    *VENDOR_APPS,
+    *DJANGO_APPS,
 ]
 
 MIDDLEWARE = [
