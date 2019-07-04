@@ -6,11 +6,11 @@ from catalog.models import Item, Catalog
 
 
 class Stock(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=255)
 
 
 class Localization(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=255)
     stock = models.ForeignKey(Stock, on_delete=models.CASCADE)
 
 
@@ -39,5 +39,5 @@ class Transaction(models.Model):
 
 class Lot(models.Model):
     transaction = models.ForeignKey(Transaction, on_delete=models.PROTECT)
-    lot_number = models.CharField()
+    lot_number = models.CharField(max_length=255)
     expiration_date = models.DateField()

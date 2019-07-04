@@ -2,11 +2,11 @@ from django.db import models
 
 
 class Manufacturer(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=255)
 
 
 class Item(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=255)
 
 
 class Catalog(models.Model):
@@ -20,5 +20,5 @@ class Catalog(models.Model):
 
     item = models.ForeignKey(Item, on_delete=models.PROTECT)
     manufacturer = models.ForeignKey(Manufacturer, null=True, on_delete=models.PROTECT)
-    catalog_number = models.CharField(blank=True)
+    catalog_number = models.CharField(max_length=255, blank=True)
     stock_units = models.PositiveIntegerField()
